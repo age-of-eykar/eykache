@@ -1,0 +1,5 @@
+aiohttp
+aiohttp_cors
+#psycopg2
+toml
+black
