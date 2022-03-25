@@ -13,6 +13,34 @@ class Config:
         return self.config["api"]["endpoint"]
 
     @property
+    def database(self) -> str:
+        return self.config["database"]["database"]
+
+    @property
+    def user(self) -> str:
+        return self.config["database"]["user"]
+
+    @property
+    def password(self) -> str:
+        return self.config["database"]["password"]
+
+    @property
+    def host(self) -> str:
+        return self.config["database"]["host"]
+
+    @property
+    def port(self) -> str:
+        return self.config["database"]["host"]
+
+    @property
+    def chain_id(self) -> str:
+        return self.config["api"]["chain_id"]
+
+    @property
+    def from_block(self) -> str:
+        return self.config["api"]["from_block"]
+
+    @property
     def page_size(self) -> str:
         return self.config["api"]["page_size"]
 

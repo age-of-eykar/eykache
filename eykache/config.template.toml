@@ -1,10 +1,19 @@
 [api]
-endpoint = "https://goerli.voyager.online/api/events"
-page_size = 500
+endpoint = "http://starknet.events/api/v1/get_events"
+chain_id = "testnet"
+from_block = 106000
+page_size = 100
+
+[database]
+database = "eykache"
+user = "eykache"
+password = "XXXXXXX"
+host = "localhost"
+port = 5432
 
 [server]
 port = "8080" 
 request_max_size = 1000000 # 1 MB
 
 [eykar]
-contract = "0x07f0054a16722e689feeb4a72537e86e2a062c38c0cfee7ea546d68835557df5"
+contract = "0x7f0054a16722e689feeb4a72537e86e2a062c38c0cfee7ea546d68835557df5"
