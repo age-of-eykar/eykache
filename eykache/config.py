@@ -30,7 +30,7 @@ class Config:
 
     @property
     def db_port(self) -> str:
-        return self.config["database"]["host"]
+        return self.config["database"]["port"]
 
     @property
     def chain_id(self) -> str:
