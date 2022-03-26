@@ -1,6 +1,6 @@
 from config import Config
 from aiohttp import web
-#from db import Database
+from db import Database
 from contract import Eykar
 import server
 import asyncio
@@ -9,10 +9,10 @@ import sync
 async def main():
     conf = Config()
     app = web.Application(client_max_size=conf.request_max_size)
-    #database = Database(conf)
+    database = Database(conf)
     eykar = Eykar(conf)
     await eykar.load()
-    await sync.start(None, eykar, conf)
+    await sync.start(database, eykar, conf)
     server.setup(app, conf, None)
     runner = web.AppRunner(app)
     await runner.setup()
