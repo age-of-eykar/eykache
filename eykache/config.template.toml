@@ -1,7 +1,6 @@
 [api]
 endpoint = "http://starknet.events/api/v1/get_events"
 chain_id = "testnet"
-from_block = 106000
 page_size = 100
 
 [database]
