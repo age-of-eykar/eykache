@@ -27,7 +27,8 @@ def to_event(item):
         item["block_number"],
     )
 
-def claim(x, y, colony):
+def claim(database, x, y, colony):
+    database.write(x, y, colony)
     print(f"- colony {colony} claimed ({x},{y})")
 
 async def start(database, eykar, config):
@@ -49,16 +50,17 @@ async def start(database, eykar, config):
             for item in parsed["items"]:
                 x, y, block = to_event(item)
                 colony, _, _ = await eykar.get_plot(to_felt(x), to_felt(y))
-                claim(x, y, colony)
+                claim(database, x, y, colony)
             for i in range(2, to_do // config.page_size + 2):
                 response = await session.get(f"{url}&page={i}")
                 parsed = await response.json()
                 for item in parsed["items"]:
                     x, y, block = to_event(item)
                     colony, _, _ = await eykar.get_plot(to_felt(x), to_felt(y))
-                    claim(x, y, colony)
+                    claim(database, x, y, colony)
 
             with open(config._get_path("data.json"), "w") as write:
                 json.dump({"last_block": block}, write)
+            database.commit()
 
         print("[Info] Finished fetching new Eykar contract events")
