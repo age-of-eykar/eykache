@@ -6,7 +6,7 @@ class Database:
         self.config = config
         self.conn = psycopg2.connect(
             database=config.database,
-            user=config.users,
+            user=config.user,
             password=config.password,
             host=config.host,
             port=config.port,
