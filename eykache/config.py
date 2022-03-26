@@ -29,7 +29,7 @@ class Config:
         return self.config["database"]["host"]
 
     @property
-    def port(self) -> str:
+    def db_port(self) -> str:
         return self.config["database"]["host"]
 
     @property

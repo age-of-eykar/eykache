@@ -9,7 +9,7 @@ class Database:
             user=config.user,
             password=config.password,
             host=config.host,
-            port=config.port,
+            port=config.db_port,
         )
         self.cur = self.conn.cursor()
         self.cur.execute(
