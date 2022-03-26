@@ -2,7 +2,6 @@ from aiohttp import web
 import aiohttp_cors
 import re
 
-
 def setup(app, config, database):
     routes = Routes(config, database)
     cors = aiohttp_cors.setup(
@@ -63,7 +62,7 @@ class Routes:
                     x, y = point.split(" ")
                     output.append({"colony_id": colony_id, "x": int(x), "y": int(y)})
                     break
-        except:
+        except Exception:
             pass
 
         return web.json_response(output)
