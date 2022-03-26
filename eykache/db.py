@@ -14,7 +14,7 @@ class Database:
         self.cur = self.conn.cursor()
         self.cur.execute(
             "CREATE TABLE IF NOT EXISTS colonies (id integer, location geometry(POINT) UNIQUE);"
-            "CREATE INDEX plots ON colonies USING GIST (location);"
+            "CREATE INDEX IF NOT EXISTS plots ON colonies USING GIST (location);"
         )
 
     def write(self, x, y, colony_id):
