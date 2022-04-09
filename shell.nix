@@ -15,6 +15,9 @@ in pkgs.mkShell rec {
 
     # required by fastecdsa
     gmp
+
+    # required by postgresl
+    libpqxx
   ];
 
   # Run this command, only after creating the virtual environment

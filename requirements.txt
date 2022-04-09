@@ -1,6 +1,6 @@
 aiohttp
 aiohttp_cors
-psycopg2-binary
+psycopg2
 toml
 black
 starknet.py==0.1.8a0
