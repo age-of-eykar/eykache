@@ -13,6 +13,10 @@ class Database:
         )
         self.cur = self.conn.cursor()
         self.cur.execute(
+            "CREATE EXTENSION IF NOT EXISTS plpgsql;"
+            "CREATE EXTENSION IF NOT EXISTS postgis;"
+            "CREATE EXTENSION IF NOT EXISTS postgis_raster;"
+            "CREATE EXTENSION IF NOT EXISTS postgis_topology;"
             "CREATE TABLE IF NOT EXISTS colonies (id integer, location geometry(POINT) UNIQUE);"
             "CREATE INDEX IF NOT EXISTS plots ON colonies USING GIST (location);"
         )

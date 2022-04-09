@@ -3,4 +3,4 @@ aiohttp_cors
 psycopg2-binary
 toml
 black
-starknet.py
+starknet.py==0.1.8a0
