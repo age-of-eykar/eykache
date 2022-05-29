@@ -6,6 +6,7 @@ import server
 import asyncio
 import sync
 
+
 async def main():
     conf = Config()
     app = web.Application(client_max_size=conf.request_max_size)

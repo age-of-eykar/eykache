@@ -2,6 +2,7 @@ from aiohttp import web
 import aiohttp_cors
 import re
 
+
 def setup(app, config, database):
     routes = Routes(config, database)
     cors = aiohttp_cors.setup(

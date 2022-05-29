@@ -1,5 +1,4 @@
 import aiohttp
-import asyncio
 import json
 
 
@@ -27,9 +26,11 @@ def to_event(item):
         item["block_number"],
     )
 
+
 def claim(database, x, y, colony):
     database.write(x, y, colony)
     print(f"- colony {colony} claimed ({x},{y})")
+
 
 async def start(database, eykar, config):
 
